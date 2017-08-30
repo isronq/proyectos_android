@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">REGPER INOCAR</string>
+
+    <string-array name="institucion">
+        <item name="app_name1">Institucional</item>
+        <item name="app_name2">Visita</item>
+    </string-array>
+
+    <string-array name="departamento">
+        <item name="app_name1">DON</item>
+        <item name="app_name2">CENDO</item>
+    </string-array>
+
+    <string-array name="personal">
+        <item name="app_name1">SP. Sergio Suarez</item>
+        <item name="app_name2">SP. Israel Ronquillo</item>
+        <item name="app_name3">SP. Marcelo Candell</item>
+    </string-array>
+</resources>

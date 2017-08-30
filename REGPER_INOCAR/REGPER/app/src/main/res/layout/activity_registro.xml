@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#0000ff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="inocar.regper.MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView_Registro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="4dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/contraint_Formulario"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:paddingBottom="65dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            app:layout_constraintBottom_toBottomOf="@+id/scrollView_Registro"
+            app:layout_constraintLeft_toLeftOf="@+id/scrollView_Registro"
+            app:layout_constraintRight_toRightOf="@+id/scrollView_Registro"
+            app:layout_constraintTop_toTopOf="@+id/scrollView_Registro">
+
+            <SearchView
+                android:id="@+id/busqueda"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="-18dp"
+                android:background="@color/colorBlanco"
+                android:hint="Ingrese su busqueda"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="15dp" />
+
+            <EditText
+                android:id="@+id/cedula"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@color/colorBlanco"
+                android:ems="10"
+                android:hint="Ingrese Cedula"
+                android:paddingLeft="15dp"
+                android:textSize="16dp"
+                android:inputType="numberPassword"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="15dp"
+                app:layout_constraintTop_toBottomOf="@+id/busqueda"
+                app:layout_constraintHorizontal_bias="0.266" />
+
+            <EditText
+                android:id="@+id/nombre"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorBlanco"
+                android:ems="10"
+                android:hint="Ingrese Nombre"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="15dp"
+                android:textSize="16dp"
+                app:layout_constraintHorizontal_bias="0.266"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cedula" />
+
+            <Spinner
+                android:id="@+id/institucion"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:entries="@array/institucion"
+                android:paddingLeft="15dp"
+                android:textSize="16sp"
+                android:background="@color/colorBlanco"
+                android:spinnerMode="dropdown"
+                app:layout_constraintHorizontal_bias="0.266"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nombre" />
+
+            <Spinner
+                android:id="@+id/departamento"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorBlanco"
+                android:ems="10"
+                android:focusableInTouchMode="false"
+                android:entries="@array/departamento"
+                android:paddingLeft="15dp"
+                android:textColorHint="@color/color_hint"
+                android:textSize="15sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/institucion" />
+
+            <Spinner
+                android:id="@+id/personal"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorBlanco"
+                android:ems="10"
+                android:entries="@array/personal"
+                android:paddingLeft="15dp"
+                android:textColorHint="@color/color_hint"
+                android:textSize="15sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/departamento"
+                app:layout_constraintHorizontal_bias="0.466" />
+
+            <RadioGroup
+                android:id="@+id/registro"
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="15dp"
+                android:checkedButton="@+id/rb_female"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/personal">
+
+                <RadioButton
+                    android:id="@+id/ingreso"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".50"
+                    android:onClick="onRadioButtonClick"
+                    android:shadowColor="@color/color_hint"
+                    android:text="INGRESO"
+                    android:textColor="@color/color_hint"
+                    android:textSize="12dp" />
+
+                <RadioButton
+                    android:id="@+id/salida"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".50"
+                    android:shadowColor="@color/color_hint"
+                    android:text="SALIDA"
+                    android:textColor="@color/color_hint" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/guardarvisita"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="GUARDAR VISITA"
+                app:layout_constraintDimensionRatio="h,130:20"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="15dp"
+                app:layout_constraintTop_toBottomOf="@+id/registro" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="10dp"
+                android:text="Salir"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guardarvisita"
+                android:layout_marginLeft="32dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintHorizontal_bias="1.0" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
